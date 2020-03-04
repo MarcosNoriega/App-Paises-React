@@ -8,11 +8,11 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 function App() {
   return (
     <Router>
-      <Navbars />
+      <Navbars basename="https://marcosnoriega.github.io/App-Paises-React"/>
 
-      <Route path="/" exact component={Paises} />
-      <Route path="/:region" exact component={Paises} />
-      <Route path="/pais/:codigo" exact component={Pais} />
+      <Route path={`${process.env.PUBLIC_URL}/`} exact component={Paises} />
+      <Route path={`${process.env.PUBLIC_URL}/:region`} exact component={Paises} />
+      <Route path={`${process.env.PUBLIC_URL}/:codigo`} exact component={Pais} />
     </Router>
     
   );
